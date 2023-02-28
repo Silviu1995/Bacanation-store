@@ -3,7 +3,6 @@ import {  useRef } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import { CircularProgress } from '@material-ui/core'
 import swal from 'sweetalert'
 
 
@@ -70,8 +69,7 @@ const Register = () => {
                 type="password" 
                 className="registerInput" 
                 />
-                <button className="registerButton">{fetching ? <CircularProgress 
-                    color='inherit' size='25px'/> :'Sign up'}</button>
+                <button className="registerButton">:'Sign up'</button>
               </form>
                 <button  onClick={()=> navigate('/login')} className="registerRegisterButton">Log into Account</button>
             </div>
