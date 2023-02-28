@@ -33,7 +33,7 @@ const Footer = () => {
       
       <div className="bottom">
         <div className="left">
-          <span className="logo">BACANATION SHOP </span>
+          <span className="logo">BACANATION STORE </span>
           <CopyrightIcon className='copyrightLogo'/> 
           <span className="copyright">copyright 2023. All right reserved !</span>
         </div>

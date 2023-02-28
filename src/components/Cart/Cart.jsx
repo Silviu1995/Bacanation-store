@@ -1,55 +1,41 @@
 import React from 'react'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import {useDispatch, useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import './Cart.scss'
+import { removeItem, resetCart } from '../../redux/cartReducer';
+import { toast } from 'react-toastify';
+
+
 
 const Cart = () => {
-    const data = [
-        {
-            id: 1,
-            title: "Blue berry",
-            img: "https://images.pexels.com/photos/8452006/pexels-photo-8452006.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            img2: "https://images.pexels.com/photos/8451998/pexels-photo-8451998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            isNew: true,
-            desc: 'Nice',
-            oldPrice: 65,
-            price: 29
-        },
-        {
-            id: 1,
-            title: "Blue berry",
-            img: "https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            img2: "https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            isNew: true,
-            desc: 'Nice',
-            oldPrice: 22,
-            price: 19
-        },
-        {
-            id: 1,
-            title: "Blue berry",
-            img: "https://images.pexels.com/photos/3760853/pexels-photo-3760853.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            img2: "https://images.pexels.com/photos/3760852/pexels-photo-3760852.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            isNew: true,
-            desc: 'Nice',
-            oldPrice: 22,
-            price: 19
-        }
-    ]
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+   const products = useSelector(state=>state.cart.products)
+   const totalPrice = () => {
+    let total = 0
+    products.forEach((item) =>(total += item.quantity * item.price));
+    return total.toFixed(2)
+  }
+
   return (
     <div className='cart'>
       <h1>Products in your cart</h1>
       <div className="itemContainer">
       {
-        data?.map((item) => (
+        products?.map((item) => (
         <div key={item.id} className="item">
             <img src={item.img} alt="" className="" />
-            <div className="details">
-                <h1>{item.title}</h1>
-                <p>{item.desc?.substring(0,100)}</p>
-                <span className='price'>1 x ${item.price}</span>
+            <div className="detailsContainer">
+                <div className="details">
+                    <h1>{item.title}</h1>
+                    <p>{item.desc?.substring(0,100)}</p>
+                    <span className='price'>{item.quantity} x ${item.price}</span>
+                </div>
+                <DeleteOutlineIcon className='delete' onClick={()=>dispatch(removeItem(item.id))} />
             </div>
-            <DeleteOutlineIcon className='delete'/>
+            
         </div>
         ))}
       </div>
@@ -57,10 +43,15 @@ const Cart = () => {
         <div className="bottom">
         <div className="total">
             <span>SUBTOTAL</span>
-            <span>125$</span>
+            
+            <span>{totalPrice()}$</span>
         </div>
-        <button className='checkOut'>PROCEED TO CHECKOUT</button>
-        <div className='reset'>Reset Cart <RestartAltIcon/></div>
+        <button className='checkOut' onClick={()=>navigate('/checkout')}>PROCEED TO CHECKOUT</button>
+        <div className='reset' onClick={()=>{
+          toast('🔄 The Cart was reset')
+          dispatch(resetCart())}}>
+            Reset Cart 
+            <RestartAltIcon/></div>
         </div>
        
     </div> 
@@ -68,3 +59,10 @@ const Cart = () => {
 }
 
 export default Cart
+
+
+
+
+
+
+

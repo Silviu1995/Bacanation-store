@@ -1,0 +1,85 @@
+.loginModal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.438);
+  .loginModalContainer {
+    border-radius: 10px;
+    position: fixed;
+    background-color: rgba(207, 207, 208, 0.982);
+    max-width: 600px;
+    width: 80%;
+    top: 12%;
+    left: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    padding: 10px;
+    border: 1px solid black;
+    gap: 10px;
+    .loginModalTitle{
+      font-weight: 700;
+      font-size: 32px;
+      
+    }
+    .loginModalUp{
+      
+      img{
+        height: 180px;
+        width: 180px;
+      }
+    }
+    .loginModalDown {
+      
+      .loginModalBox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        
+
+        .loginModalForm{
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          .loginModalInput {
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid rgb(170, 167, 167);
+            font-size: 18px;
+            width: 320px;
+            padding-left: 20px;
+          }
+          .loginModalButton{
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            margin: 20px 0 0 0;
+            cursor: pointer;
+          }
+        }
+        .loginModalForgot{
+          cursor: pointer;
+        }
+        .loginModalRegister{
+          height: 50px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

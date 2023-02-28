@@ -3,9 +3,9 @@
     position:sticky;
     top: 0;
     z-index: 999;
-    
-    background-color: #dfe4ca;
-    
+    color: white;
+    background-color: black;
+    width: 100%;
 
 
     .wrapper {
@@ -13,37 +13,55 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+       
         
-        .item {
-            display: flex;
-            align-items: center;
-        }
         .left {
             display: flex;
             align-items: center;
             gap: 25px;
+            
+            margin-top: 10px;
         }
         .center {
-         font-size: 30px;   
-         letter-spacing: 2px;
+            
+         img{
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            top: 0;
+            
+         }
         }
         .right {
+            margin-top: 5px;
             display: flex;
             align-items: center;
             gap: 25px;
             .icons {
                 display: flex;
-                gap: 20px;
+                gap: 15px;
                 cursor: pointer;
-                color: #777;
+                color: white;
+                .profile{
+                    position: relative;
+                    .profileBadge{
+                        border-radius: 50%;
+                        width: 12px;
+                        height: 12px;
+                        background-color: rgb(71, 222, 71);
+                        position: absolute;
+                        top: -6px;
+                        right: -7px;
+                    }
+                }
                 .shopCart{
                     position: relative;
                     span{
                         border-radius: 50%;
-                        font-size: 12px;
-                        width: 20px;
-                        height: 20px;
-                        background-color: #6f2dc1;
+                        font-size: 9px;
+                        width: 17px;
+                        height: 17px;
+                        background-color: red;
                         color: white;
                         position: absolute;
                         right: -10px;

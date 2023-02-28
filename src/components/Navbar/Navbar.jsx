@@ -1,27 +1,26 @@
 import React, { useState } from 'react';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import SearchIcon from '@mui/icons-material/Search';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './Navbar.scss'
 import Cart from '../Cart/Cart';
-
+import { toogleLoginModal, toogleUserModal } from '../../redux/modalsReducer';
+import UserPopUp from '../UserPopUp/UserPopUp';
+import LoginPopUp from '../LoginPopUp/LoginPopUp';
 const Navbar = () => {
+  const products = useSelector(state => state.cart.products)
+  const favProducts = useSelector(state => state.favorite.favProducts)
   const [open, setOpen] = useState(false)
+
+  const user = useSelector(state =>state.user.currentUser)
+
+  const dispatch = useDispatch()
   return (
-    <div className="navbar">
+    <div className="navbar" >
       <div className="wrapper">
         <div className="left">
-          <div className="item">
-            <img src="/img/en.png" alt="" className="img" />
-            <KeyboardArrowDownIcon/>
-          </div>
-          <div className="item">
-            <span>USD</span>
-            <KeyboardArrowDownIcon/>
-          </div>
           <div className="item">
             <Link className='link' to='/products/1'>Women</Link>
           </div>
@@ -33,7 +32,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="center">
-          <Link className='link' to='/'>BACANATION STORE</Link>
+          <Link className='link' to='/'>
+            <img src="/img/logo_transparent.png" alt="" />
+          </Link>
         </div>
         <div className="right">
           <div className="item">
@@ -49,17 +50,28 @@ const Navbar = () => {
             <Link className='link' to='/products/3'>Stores</Link>
           </div>
           <div className="icons">
-            <SearchIcon/> 
-            <AccountCircleIcon/>
+           <div className="profile">
+           <AccountCircleIcon onClick={()=>dispatch(toogleUserModal(true))}/>
+           {user && <span className='profileBadge'></span> }
+           </div>
+            <Link to='/favorites' className='link'>
+            <div className="shopCart">
             <ThumbUpIcon/>
+              <span>{favProducts.length}</span>
+            </div> 
+            
+            </Link>
+            
             <div className="shopCart" onClick={()=> setOpen(!open)}>
               <ShoppingBasketIcon/>
-              <span>0</span>
+              <span>{products.length}</span>
             </div> 
           </div>
           
         </div>
       </div>
+      <UserPopUp/>
+      <LoginPopUp/>
       {open && <Cart/>}
     </div>
   )
