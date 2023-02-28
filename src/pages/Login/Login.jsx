@@ -1,6 +1,5 @@
 import './login.scss'
 import { useRef } from 'react'
-import { CircularProgress } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { startFetch, loginUser, loginError } from '../../redux/userReducer'
@@ -62,8 +61,7 @@ const isFetching = useSelector(state=>state.user.isFetching)
                     ref={password} 
                     />
                     <button onClick={handleSubmit}
-                    className="loginButton">{isFetching ? <CircularProgress 
-                    color='inherit' size='25px'/> :'Log in'}
+                    className="loginButton">'Log in'
                     </button>
               </form>
                 <span className="loginForgot">Forgot Password ?</span>
