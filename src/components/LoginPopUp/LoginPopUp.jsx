@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toogleLoginModal } from '../../redux/modalsReducer';
 import './LoginPopUp.scss'
 import { useRef } from 'react'
-import { CircularProgress } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom'
 import { startFetch, loginUser,loginError } from '../../redux/userReducer';
 import { toast } from 'react-toastify';
@@ -70,8 +69,7 @@ const LoginPopUp = () => {
                   ref={password} 
                   />
                   <button onClick={handleSubmit}
-                  className="loginModalButton">{isFetching ? <CircularProgress 
-                  color='inherit' size='25px'/> :'Log in'}
+                  className="loginModalButton">'Log in'
                   </button>
             </form>
               <span className="loginModalForgot">Not registered yet ?</span>
