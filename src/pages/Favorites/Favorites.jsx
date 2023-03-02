@@ -22,6 +22,7 @@ const dispatch = useDispatch()
         products?.map((item) => (
         <div key={item.id} className="item">
             <img src={item.img} alt="" className="" />
+            <div className="detailsContainer">
             <div className="details">
                 <h1>{item.title}</h1>
                 <p>{item.desc?.substring(0,100)}</p>
@@ -52,6 +53,8 @@ const dispatch = useDispatch()
           </button>
           
         </div>
+            </div>
+            
         
         </div>
         ))}
