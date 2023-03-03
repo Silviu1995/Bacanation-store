@@ -4,11 +4,14 @@ import { removeItem,increaseCartItem, decreaseCartItem } from '../../redux/cartR
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import {loadStripe} from '@stripe/stripe-js';
+import {paymentRequest} from '../../makeRequest2'
 import {makeRequest} from '../../makeRequest'
 import {  toast } from 'react-toastify';
 import './Checkout.scss'
 import { toogleLoginModal } from '../../redux/modalsReducer';
+import axios from 'axios';
 const Checkout = () => {
+  const secret = useSelector(state=>state.user.currentUserSecret)
   const totalPrice = () => {
     let total = 0
     products.forEach((item) =>(total += item.quantity * item.price));
@@ -21,10 +24,15 @@ const Checkout = () => {
       dispatch(toogleLoginModal(true))
     } else {
       try{
+        console.log(secret)
         const stripe = await stripePromise 
-        const res = await makeRequest.post('/orders',{
+        const res = await paymentRequest.post('/orders',{
           products,
-        })
+          email: currentUser.email,
+        }, {headers: {
+              Authorization: "bearer " + secret
+           }})
+    
         await stripe.redirectToCheckout({
           sessionId:res.data.stripeSession.id
         })

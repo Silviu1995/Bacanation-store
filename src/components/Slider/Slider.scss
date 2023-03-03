@@ -1,17 +1,17 @@
 .slider {
-    height: calc(100vh - 80px);
-    width: 100vw;
+    height: calc(70vh);
+    width: 100%;
     position: relative;
-    overflow:hidden;
-
+    overflow: hidden;
+    
     .container {
-        width: 300vw;
+        width: 300%;
         height: 100%;
         display: flex;
         transition: all 1s ease;
         img {
-            width: 100%;
-            height: 100%;
+            width: 33.33%;
+            height: auto;
             object-fit: cover;
         }
     }
@@ -21,19 +21,37 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 100px;
-        gap: 10px;
+        bottom: 20px;
+        gap: 5px;
         margin: auto;
-        
 
         .icon {
-            width: 50px;
-            height: 50px;
-            border:  solid  white;
+            width: 30px;
+            height: 30px;
+            border: solid white;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+        }
+    }
+
+    @media (max-width: 764px) {
+        height: calc(50vh);
+
+        .container {
+            img {
+                width: 33.33%;
+            }
+        }
+
+        .icons {
+            bottom: 10px;
+            gap: 30px;
+            .icon {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 }

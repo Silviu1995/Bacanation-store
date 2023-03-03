@@ -26,7 +26,7 @@ const handleSubmit = async (event) => {
   try {
     dispatch(startFetch())
     const res = await axios.post(process.env.REACT_APP_API_URL+'/auth/local',user);
-    dispatch(loginUser(res.data.user))
+    dispatch(loginUser({ user:res.data.user, secret:res.data.jwt}))
     toast.success(`Welcome back, ${res.data.user.username}`)
   } catch (error) {
     dispatch(loginError(error.code))
@@ -34,8 +34,6 @@ const handleSubmit = async (event) => {
   }
 };
 
-
-const isFetching = useSelector(state=>state.user.isFetching)
   return (
     <div className='login'>
       <div className="loginWrapper">
@@ -61,7 +59,7 @@ const isFetching = useSelector(state=>state.user.isFetching)
                     ref={password} 
                     />
                     <button onClick={handleSubmit}
-                    className="loginButton">'Log in'
+                    className="loginButton">Log in
                     </button>
               </form>
                 <span className="loginForgot">Forgot Password ?</span>

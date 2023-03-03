@@ -32,7 +32,7 @@ const LoginPopUp = () => {
     try {
       dispatch(startFetch())
       const res = await axios.post(process.env.REACT_APP_API_URL+'/auth/local',user);
-      dispatch(loginUser(res.data.user))
+      dispatch(loginUser({ user:res.data.user, secret:res.data.jwt}))
       dispatch(toogleLoginModal(false))
       toast.success(`Welcome back, ${res.data.user.username}`)
     } catch (error) {
@@ -69,7 +69,7 @@ const LoginPopUp = () => {
                   ref={password} 
                   />
                   <button onClick={handleSubmit}
-                  className="loginModalButton">'Log in'
+                  className="loginModalButton">Log in
                   </button>
             </form>
               <span className="loginModalForgot">Not registered yet ?</span>

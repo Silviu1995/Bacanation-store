@@ -5,6 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState= {
     isFetching: false,
     currentUser: null,
+    currentUserSecret:null,
     error: null,
   }
 export const userSlice = createSlice({
@@ -15,8 +16,9 @@ export const userSlice = createSlice({
       state.isFetching = true
     },
     loginUser: (state,action) => {
-        state.currentUser = action.payload
+        state.currentUser = action.payload.user
         state.isFetching = false 
+        state.currentUserSecret = action.payload.secret
     },
     loginError: (state,action) => {
         state.error = action.payload
