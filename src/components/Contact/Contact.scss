@@ -1,10 +1,10 @@
 .contact {
     display: flex;
-    background-color: blue;
+    background-color: rgb(192, 192, 192);
     height: 60px;
     justify-content: center;
     color: white;
-    .wrapper {
+    .contactContainer {
         
         width: 50%;
         display: flex;
@@ -31,10 +31,33 @@
                 border-radius: 5px;
             }
         }
-        .icons {
+        .contactIcons {
             display: flex;
             gap: 10px;
             cursor: pointer;
         }
-    }
-}
+    }}
+
+
+    @media screen and (max-width: 768px) {
+        .contact {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        }
+        .contactContainer {
+        flex-direction: column;
+        width: 90%;
+        gap: 10px;
+        }
+        .contactContainer .email {
+        flex-direction: column;
+        gap: 10px;
+        input {
+            width: 80vw;
+        }
+        }
+        .contactContainer .contactIcons {
+        margin-bottom: 10px;
+        }
+        }

@@ -9,13 +9,13 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 const Contact = () => {
   return (
     <div className='contact'>
-      <div className="wrapper">
+      <div className="contactContainer">
         <span>GET IN TOUCH !</span>
         <div className="email">
             <input type="text" placeholder='Enter your email' />
             <button>JOIN US</button>
         </div>
-        <div className="icons">
+        <div className="contactIcons">
             <FacebookIcon/>
             <InstagramIcon/>
             <TwitterIcon/>
