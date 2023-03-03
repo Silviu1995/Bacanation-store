@@ -3,7 +3,7 @@
     display: flex;
     .left {
         flex: 1;
-        position: sticky;
+        
         height: 100%;
         top: 90px;
         
@@ -36,5 +36,36 @@
             margin-bottom: 50px;
         }
     }
+    
+}
+@media (max-width: 768px) {
+    .products {
+    flex-direction: column;
+    width: 95vw;
+    padding: 10px 0;
+    .left {
+    margin-left: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+    
+    .filterItem{
+        font-size: 12px;
+        margin: 0;
+        width: 100%;
+    }
+    }
+    
+    .right {
+    flex: 1;
+    margin-left: 10px;
+    
+    .catImg {
+    height: 120px;
+    }
+    }
+    }
+    
     
 }

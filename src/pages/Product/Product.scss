@@ -112,3 +112,57 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .product {
+        padding: 40px;
+        flex-direction: column;
+        gap: 5px;
+        .left {
+            gap: 20px;
+            .images {
+                img{
+                    height: 105px;
+                    width: 80px;
+                }
+            }
+            .mainImg{
+                img {
+                    height: 224px;
+                }
+            }
+        }
+        .right {
+            gap: 10px;
+            align-items: center;
+            .quantity {
+                button {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 16px;
+                }
+            }
+            .add {
+                font-size: 18px;
+                gap: 30px;
+            }
+            .add{
+                font-size: 16px;
+                font-weight: 400;  
+            }
+            .links {
+                .item {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            
+            .info {
+                font-size: 16px;
+            }
+            hr{
+                margin: 40px 0;
+            }
+        }
+    }
+}

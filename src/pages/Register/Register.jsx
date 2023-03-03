@@ -69,7 +69,7 @@ const Register = () => {
                 type="password" 
                 className="registerInput" 
                 />
-                <button className="registerButton">:'Sign up'</button>
+                <button className="registerButton">Sign up</button>
               </form>
                 <button  onClick={()=> navigate('/login')} className="registerRegisterButton">Log into Account</button>
             </div>

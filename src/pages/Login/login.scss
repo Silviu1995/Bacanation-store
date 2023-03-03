@@ -90,3 +90,54 @@
     margin-top: 20px;
 
 }
+@media screen and (max-width: 600px) {
+    .loginWrapper {
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+  
+    .loginLeft {
+      align-items: center;
+      width: 100%;
+    }
+  
+    .loginLeft img {
+      width: 80%;
+      height: auto;
+    }
+  
+    .loginRight {
+      align-items: center;
+      width: 100%;
+      margin-bottom: 80px;
+    }
+  
+    .loginBox {
+      height: 100%;
+      width: 80%;
+      margin-top: 20px;
+    }
+  
+    .loginInput {
+      height: 40px;
+      font-size: 16px;
+      margin: 10px 0;
+    }
+  
+    .loginButton {
+      height: 40px;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  
+    .loginForgot {
+      margin-top: 10px;
+    }
+  
+    .loginRegisterButton {
+      height: 40px;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }

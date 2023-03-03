@@ -75,38 +75,19 @@ const Checkout = () => {
                 </div>
               </div>
             </div>
-            
-            
-        {/* <div className="buttons">
-          <button className="add" onClick={()=>dispatch(addToCart({
-          id: item.id,
-          title: item.title,
-          desc: item.desc,
-          price: item.price,
-          img:item.img,
-          quantity:1,
-        
-        }))} >
-            <AddShoppingCartIcon/>ADD TO CART
-          </button>
-          <button className='delete' onClick={()=>{dispatch(removeItem(item.id))}}>
-            <DeleteOutlineIcon    />REMOVE
-          </button>
-        </div> */}
-        
         </div>
         ))}
         </div>
         <div className="payment">
-        <h1 className="sumary">SUMMARY</h1>
-        <div className="subtotal">
-          <span>Subtotal</span>
-          <span>{totalPrice()}$</span>
-        </div>
-        <div className="subtotal">
-          <span>Estimated tax and shipping</span>
-          <span>0$</span>
-        </div>
+          <h1 className="sumary">SUMMARY</h1>
+          <div className="subtotal">
+            <span>Subtotal</span>
+            <span>{totalPrice()}$</span>
+          </div>
+          <div className="subtotal">
+            <span>Estimated tax and shipping</span>
+            <span>0$</span>
+          </div>
         <div className="total">
           <h2>total</h2>
           <h2>{totalPrice()}$</h2>

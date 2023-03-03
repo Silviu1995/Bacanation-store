@@ -5,5 +5,9 @@
     .link {
         color: inherit;
         text-decoration: none;
+        outline: none;
+    }
+    .link:focus-within {
+        outline: none;
     }
 }

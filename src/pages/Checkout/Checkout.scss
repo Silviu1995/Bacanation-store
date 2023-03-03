@@ -11,11 +11,15 @@
         margin: 10px;
         display: flex;
         gap: 50px;
+        flex-wrap: wrap;
         
         .checkoutProducts{
             flex: 3;
             display: flex;
             flex-direction: column;
+            @media only screen and (max-width: 768px) { 
+                width: 90vw;
+            }
             .item {
                 
                 box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
@@ -25,6 +29,10 @@
                 margin-bottom: 20px;
                 align-items: center;
                 background-color: white;
+                @media only screen and (max-width: 768px) { 
+                    width: 80vw;
+                    gap: 10px;
+                }
                 
                 img {
                     border: 1px solid black;
@@ -32,6 +40,10 @@
                     width: 140px;
                     height: 200px;
                     object-fit: cover;
+                    @media only screen and (max-width: 768px) { 
+                        width: 80px;
+                        height: 110px;
+                    }
                     
                 }
                 .detailsContainer{
@@ -41,22 +53,40 @@
                     justify-content: space-between;
                     width: 100%;
                     height: 100%;
+                    @media only screen and (max-width: 768px) { 
+                        padding:0;
+                        gap: 15px;
+                       
+                    }
                     .leftCheckout{
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         height: 100%;
+                        
                         .details{
                             h1{
                                 text-transform: capitalize;
                                 font-weight: 600;
                                 font-size: 26px;
+                                @media only screen and (max-width: 768px) { 
+                                    font-weight: 600;
+                                    font-size: 16px;
+                                }
                             }
                             p{
+                                @media only screen and (max-width: 768px) { 
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                }
                                 color: grey;
                             }
                             span{
                                 color: blue;
+                                @media only screen and (max-width: 768px) { 
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                }
                             }
                             
                         }
@@ -66,6 +96,11 @@
                             color: white;
                             text-transform: uppercase;
                             cursor: pointer;
+                            @media only screen and (max-width: 768px) { 
+                                width: 80px;
+                                font-size: 12px;
+                                padding: 6px;
+                            }
                         }
                     }
                     .rightCheckout{
@@ -74,7 +109,17 @@
                         flex-direction: column;
                         justify-content: space-between;
                         height: 100%;
-                        
+                        h2{
+                            font-weight: 600;
+                            @media only screen and (max-width: 768px) { 
+                                font-size: 14px;
+                            }
+                        }
+                        @media only screen and (max-width: 768px) { 
+                            font-weight: 400;
+                            font-size: 12px;
+                            
+                        }
 
                         .quantity{
                             display: flex;
@@ -92,60 +137,7 @@
                         }
                     }
                 }
-                // .details {
-                //     display: flex;
-                //     flex-direction: column;
-                //     h1{
-                //         font-size: 18px;
-                //         font-weight: 500;
-                //     }
-                //     p{
-                //         color: gray;
-                //         margin-bottom: 10px;
-                //         font-size: 14px;
-                //     }
-                //     .price {
-                //         color: blue;
-                //     }
-        
-                // }
-                // .buttons {
-                //     display: flex;
-                //     flex-direction: column;
-                //     gap: 20px;
-                //     .add {
-                //         width: 150px;
-                //         padding: 5px;
-                //         background-color: rgb(62, 62, 234);;
-                //         color: white;
-                //         display: flex;
-                //         align-items: center;
-                //         justify-content: center;
-                //         border: none;
-                //         border-radius: 10px;
-                //         cursor: pointer;
-                //         gap: 10px;
-                //         font-weight: 600;
-                //     }
-                
-                // .delete {
-                    
-                //     width: 150px;
-                //         padding: 5px;
-                //         background-color: rgb(184, 43, 40);;
-                //         color: white;
-                //         display: flex;
-                //         align-items: center;
-                //         justify-content: center;
-                //         border: none;
-                //         border-radius: 10px;
-                //         cursor: pointer;
-                //         gap: 10px;
-                //         font-weight: 600;
-                    
-                //     }
-                    
-                // }
+              
             }
         }
 
@@ -205,3 +197,4 @@
             
     }
 }
+

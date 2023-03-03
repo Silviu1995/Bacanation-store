@@ -3,13 +3,14 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.scss'
 import Cart from '../Cart/Cart';
 import { toogleLoginModal, toogleUserModal } from '../../redux/modalsReducer';
 import UserPopUp from '../UserPopUp/UserPopUp';
 import LoginPopUp from '../LoginPopUp/LoginPopUp';
 const Navbar = () => {
+  const navigate = useNavigate()
   const products = useSelector(state => state.cart.products)
   const favProducts = useSelector(state => state.favorite.favProducts)
   const [open, setOpen] = useState(false)

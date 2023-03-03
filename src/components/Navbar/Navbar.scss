@@ -101,10 +101,15 @@
             .item{
                 display: none;
             }
+            
           .icons{
             margin-top: 5px;
             gap: 20px;
             margin-right: 10px;
+          
+          }
+          .icons:focus-within{
+            outline: none;
           }
           
         }

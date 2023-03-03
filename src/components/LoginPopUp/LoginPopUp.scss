@@ -83,3 +83,31 @@
     }
   }
 }
+@media only screen and (max-width: 600px) {
+  .loginModal {
+    .loginModalContainer {
+      max-width: 100%;
+      width: 80%;
+      margin-left: 23px;
+      margin-top: 100px;
+      top: 0;
+      left: 0;
+      border-radius: 0;
+      .loginModalUp {
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+      .loginModalDown {
+        .loginModalBox {
+          .loginModalForm {
+            .loginModalInput {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

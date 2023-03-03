@@ -86,3 +86,47 @@
     margin: 15px 0; 
     width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+    .registerWrapper {
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .registerLeft {
+        margin-top: 10px;
+        align-items: center;
+        width: 100%;
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+    
+    .registerRight {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 80px;
+    }
+    
+    .registerBox {
+        height: 100%;
+        width: 80%;
+        margin-top: 20px;
+    }
+    
+    .registerInput {
+        height: 40px;
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    
+    .registerButton,
+    .registerRegisterButton {
+        height: 40px;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+  }
+  
