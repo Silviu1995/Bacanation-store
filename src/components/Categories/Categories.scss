@@ -55,3 +55,21 @@
         }
     }
 }
+@media (max-width: 768px) {
+    .categories {
+      flex-direction: column;
+      height: 600px;
+    }
+    
+    .col {
+      height: 160px;
+    }
+    .row {
+      width: 100%;
+      
+     .img{
+        height: 160px;
+        
+     }
+    }
+  }
