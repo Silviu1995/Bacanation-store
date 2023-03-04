@@ -30,10 +30,13 @@ const Checkout = () => {
         }, {headers: {
               Authorization: "bearer " + secret
            }})
-    
-        await stripe.redirectToCheckout({
-          sessionId:res.data.stripeSession.id
-        })
+          
+  
+          await stripe.redirectToCheckout({
+            sessionId: res.data.stripeSession.id
+          })
+        
+        
         } catch(err) {
           console.log(err)
         }
