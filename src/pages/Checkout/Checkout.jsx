@@ -9,6 +9,7 @@ import {  toast } from 'react-toastify';
 import './Checkout.scss'
 import { toogleLoginModal } from '../../redux/modalsReducer';
 const Checkout = () => {
+  const dispatch = useDispatch()
   const secret = useSelector(state=>state.user.currentUserSecret)
   const totalPrice = () => {
     let total = 0
@@ -33,7 +34,6 @@ const Checkout = () => {
         await stripe.redirectToCheckout({
           sessionId:res.data.stripeSession.id
         })
-        console.log(res.data.stripeSession.id)
         } catch(err) {
           console.log(err)
         }
@@ -41,7 +41,7 @@ const Checkout = () => {
     
   }
   const products = useSelector(state=>state.cart.products)
-  const dispatch = useDispatch()
+  
   return (
     <div className='checkout'>
       <div className="checkoutContainer">
