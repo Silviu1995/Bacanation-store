@@ -22,7 +22,6 @@ const Checkout = () => {
       dispatch(toogleLoginModal(true))
     } else {
       try{
-        console.log(secret)
         const stripe = await stripePromise 
         const res = await paymentRequest.post('/orders',{
           products,
@@ -34,6 +33,7 @@ const Checkout = () => {
         await stripe.redirectToCheckout({
           sessionId:res.data.stripeSession.id
         })
+        console.log(res.data.stripeSession.id)
         } catch(err) {
           console.log(err)
         }
