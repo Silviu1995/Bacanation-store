@@ -14,7 +14,6 @@ const LoginPopUp = () => {
   const dispatch = useDispatch()
   const open = useSelector(state => state.modal.loginPopUp)
   const onClose = () => dispatch(toogleLoginModal(false))
-  const isFetching = useSelector(state=>state.user.isFetching)
 
   const registerHandler = (event) => {
     event.preventDefault()

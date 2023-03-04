@@ -2,12 +2,12 @@ import './register.scss'
 import {  useRef } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+// import { useState } from 'react'
 import swal from 'sweetalert'
 
 
 const Register = () => {
-  const [fetching,setFetching] = useState(false)
+  // const [fetching,setFetching] = useState(false)
   const username = useRef()
   const email = useRef()
   const password = useRef()
@@ -38,12 +38,12 @@ const Register = () => {
         } catch(err) {
           console.log(err)
         }
-        setFetching(false) 
+        // setFetching(false) 
       }
   }
 
   return (
-    <div className='register' onClick={() => setFetching(false)}>
+    <div className='register' >
       <div className="registerWrapper">
         <div className="registerLeft">
           <img src="/img/logo_transparent.png" alt="" />

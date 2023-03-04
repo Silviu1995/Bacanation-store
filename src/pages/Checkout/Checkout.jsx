@@ -5,11 +5,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import {loadStripe} from '@stripe/stripe-js';
 import {paymentRequest} from '../../makeRequest2'
-import {makeRequest} from '../../makeRequest'
 import {  toast } from 'react-toastify';
 import './Checkout.scss'
 import { toogleLoginModal } from '../../redux/modalsReducer';
-import axios from 'axios';
 const Checkout = () => {
   const secret = useSelector(state=>state.user.currentUserSecret)
   const totalPrice = () => {

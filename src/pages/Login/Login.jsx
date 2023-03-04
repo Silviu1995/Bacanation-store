@@ -1,7 +1,7 @@
 import './login.scss'
 import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { startFetch, loginUser, loginError } from '../../redux/userReducer'
 import { toast } from 'react-toastify';
 import axios from 'axios'

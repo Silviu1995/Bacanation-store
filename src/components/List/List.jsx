@@ -4,7 +4,7 @@ import useFetch from '../../Hooks/useFetch'
 import './List.scss'
 
 const List = ({subCats,maxPrice,sort,catId}) => {
-  const {data,loading,error} = useFetch(`/products?populate=*&[filters][categories][id]=${catId}
+  const {data,loading} = useFetch(`/products?populate=*&[filters][categories][id]=${catId}
   ${subCats.map((item) => `&[filters][sub_categories][id][$eq]=${item}`)}
   &[filters][price][$lte]=${maxPrice}${sort? `&[sort]=price:${sort}` : ''}`)
   return (
