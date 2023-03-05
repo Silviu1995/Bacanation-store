@@ -98,9 +98,7 @@
             width: 80px;
           }
         }
-        .right:focus{
-          outline: none;
-        }
+        
         .right {
             display: flex;
             .item{
@@ -108,13 +106,13 @@
             }
             
           .icons{
-            
+           
             margin-top: 10px;
             gap: 30px;
             margin-right:20px;
           
           }
-          .icons:focus-within{
+          .icons:focus{
             outline: none;
           }
           

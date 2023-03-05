@@ -14,7 +14,7 @@ const Categories = () => {
             <div className="row">
                 <div className="col">
                     <div className="row">
-                    <img src="https://images.pexels.com/photos/15290928/pexels-photo-15290928.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+                    <img src="https://images.pexels.com/photos/1205033/pexels-photo-1205033.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
                     <button>
                         <Link to='/products/1' className='link'>Men</Link>
                     </button>
