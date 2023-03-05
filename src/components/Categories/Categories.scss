@@ -1,8 +1,9 @@
 .categories {
+    
     display: flex;
     height: 80vh;
-    gap: 10px;
-    margin: 10px;
+    margin: 0 180px;
+    
     .col{
         flex: 1;
         display: flex;
@@ -58,14 +59,16 @@
 @media (max-width: 768px) {
     .categories {
       flex-direction: column;
-      height: 600px;
+      height: 360px;
+      margin: 0 10px;
     }
     
     .col {
-      height: 160px;
+      height: 180px;
     }
     .row {
       width: 100%;
+      
       
      .img{
         height: 160px;
