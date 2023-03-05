@@ -44,8 +44,7 @@ const Products = () => {
             <input type="range" min={0} max={1000} onChange={(event) => setMaxPrice(event.target.value)}/>
             <span>{maxPrice}</span>
           </div>
-        </div>
-        <div className="filterItem">
+        
           <h2>Sort by</h2>
           <div className="inputItem">
             <input type="radio" id='asc' value="asc" name="price" onChange={(e)=>setSort('asc')}/>
